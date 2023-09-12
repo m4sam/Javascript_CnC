@@ -1,18 +1,18 @@
-// singleton
+// singleton by constructor
 // Object.create
 
-// object literals
 
+// object literals
 const mySym = Symbol("key1")
 
 
 const JsUser = {
-    name: "Hitesh",
-    "full name": "Hitesh Choudhary",
-    [mySym]: "mykey1",
+    name: "Manav",
+    "full name": "Manav Sam", // dot function will not work 
+    [mySym]: "mykey1", // symbol can be only acessed by sq brckts
     age: 18,
-    location: "Jaipur",
-    email: "hitesh@google.com",
+    location: "Delhi",
+    email: "manav@google.com",
     isLoggedIn: false,
     lastLoginDays: ["Monday", "Saturday"]
 }
@@ -20,18 +20,18 @@ const JsUser = {
 // console.log(JsUser.email)
 // console.log(JsUser["email"])
 // console.log(JsUser["full name"])
-// console.log(JsUser[mySym])
+// console.log(JsUser[mySym]) // symbol can be only acessed by sq brckts
 
-JsUser.email = "hitesh@chatgpt.com"
+JsUser.email = "manav@chatgpt.com"
 // Object.freeze(JsUser)
-JsUser.email = "hitesh@microsoft.com"
+JsUser.email = "manav@microsoft.com"
 // console.log(JsUser);
 
 JsUser.greeting = function(){
     console.log("Hello JS user");
 }
 JsUser.greetingTwo = function(){
-    console.log(`Hello JS user, ${this.name}`);
+    console.log(`Hello JS user, ${this.name} and this is my email - ${this.email}` );
 }
 
 console.log(JsUser.greeting());
